@@ -1,0 +1,32 @@
+# BEGIN Lens Studio managed Agents-Docs block
+.mcp.json
+.cursor/mcp.json
+.vscode/mcp.json
+.codex/config.toml
+.claude/settings.local.json
+# END Lens Studio managed Agents-Docs block
+
+# Lens Studio generated and machine-local state
+/Cache/
+/Support/
+/Workspaces/
+/PluginsUserPreferences/
+/Plugins/
+/.virtual-scene.json
+/*.esproj.*.lock
+*.log
+
+# Local coding-agent and editor configuration
+/.agents/
+/.claude/
+/.codex/
+/.cursor/
+/.vscode/
+
+# Secrets and credentials must not be published
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx

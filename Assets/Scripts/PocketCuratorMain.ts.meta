@@ -1,0 +1,49 @@
+- !<AssetImportMetadata/f3cee033-c1fb-4026-b59e-b28a537176bf>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> e75ec9bb-49fb-4c50-a004-81525e13d093
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> e75ec9bb-49fb-4c50-a004-81525e13d093
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> f0cf114f-ee4e-413d-a772-33c6ea4171de
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/f0cf114f-ee4e-413d-a772-33c6ea4171de>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: f7b6d0a2-5b42-4848-8879-fc2e4fe02b8c
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    garden: false
+    panel: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - panel: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      garden: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input AssignableType_1 panel
+    - // @input AssignableType_2 garden

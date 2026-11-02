@@ -1,0 +1,37 @@
+const fs = require('fs');
+const path = require('path');
+// Point CLAD_BUILD_MUSIC_TOOLS at the installed CLAD build-music/tools folder.
+if (!process.env.CLAD_BUILD_MUSIC_TOOLS) {
+  throw new Error('Set CLAD_BUILD_MUSIC_TOOLS to the CLAD build-music/tools directory.');
+}
+const m = require(path.resolve(process.env.CLAD_BUILD_MUSIC_TOOLS));
+const PROJECT_ASSETS_SFX = __dirname;
+fs.mkdirSync(PROJECT_ASSETS_SFX, { recursive: true });
+const bars = 8;
+const genre = 'dreamy';
+const bpm = m.suggestTempo(genre);
+const { chords, meta } = m.composeChords({ genre, voice: 'vibraphone' });
+console.log('harmony', JSON.stringify(meta), 'bpm', bpm);
+const keyMatch = meta.key.match(/^([A-Ga-g][#b]?)(-?\d+)$/);
+const scaleRoot = keyMatch[1] + (parseInt(keyMatch[2], 10) + 1);
+const arrangement = m.arrangement.arrangement8();
+const comp = m.chordEvents(chords, { voice: 'vibraphone', bars, velocity: 45, stagger: 0.18 });
+const lead = m.composeMelody({ chords, bars, notesPerBar: 4, octaveShift: 1,
+  contour: 'arch', scale: meta.scale, scaleRoot, restProbability: 0.42 });
+const tracks = [
+  m.track('garden chords', 'vibraphone', comp, {fx: {hpf: 220, lpf: 3000, reverb: 'largeHall', gain: 0.35}}),
+  m.track('tiny curiosities', 'kalimba', m.mask(lead, arrangement.b, bars, 4),
+    {fx: {hpf: 500, lpf: 4500, reverb: 'mediumRoom', gain: 0.25}}),
+];
+const duration = bars * 4 * 60 / bpm;
+const audio = m.render(tracks, { bpm, duration, master: {normalize: 'peak', glue: true, width: 1.1} });
+// The soft boundary avoids a click as the unobtrusive museum bed repeats.
+const fadeSamples = Math.floor(0.65 * 44100);
+for (const channel of [audio.left, audio.right]) {
+  for (let i = 0; i < fadeSamples; i++) {
+    const gain = i / fadeSamples;
+    channel[i] *= gain;
+    channel[channel.length - 1 - i] *= gain;
+  }
+}
+m.WavBuilder.write(audio, path.join(PROJECT_ASSETS_SFX, 'GardenMuseum.wav'));

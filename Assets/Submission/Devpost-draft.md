@@ -55,6 +55,12 @@ Pocket Curator is a SPECS Lens built in Lens Studio 5.23.2. CLAD and the Lens St
 
 **Before submitting:** Check the organizer's planning requirement against the actual process, including any planning completed after the original build. The initial build did not produce the skill pack's interview or design brief; do not claim it did. The submission form asks whether CLAD built what a design brief described, so choose an answer only when it can be answered truthfully or seek clarification from the organizer.
 
+### Clarification request for the organizers
+
+The official rules say a prospective entrant who considers a rule ambiguous must submit a written clarification request before the deadline. Suggested question for the [hackathon discussion forum](https://learn-specs.devpost.com/forum_topics):
+
+> We consulted the Devpost Learn `plan-lens` guidance before building, but did not complete the learner interview or write a design brief until after the first build. Does this satisfy the requirement to plan with the Devpost Learn skill pack? The retrospective brief is clearly labeled as such.
+
 ## Links to add
 
 - Public project repository: https://github.com/agammann/pocket-curator

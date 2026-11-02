@@ -57,7 +57,7 @@ Pocket Curator is a SPECS Lens built in Lens Studio 5.23.2. CLAD and the Lens St
 
 ## Links to add
 
-- Public GitHub, GitLab, or Bitbucket project repository: [ADD PUBLIC REPOSITORY URL]
+- Public project repository: https://github.com/agammann/pocket-curator
 - Public YouTube demonstration: [ADD PUBLIC YOUTUBE URL]
 - Optional social post: [ADD ONLY IF APPLICABLE]
 
